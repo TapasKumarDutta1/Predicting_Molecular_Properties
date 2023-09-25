@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from layers import block, ff, out
+from Layers.layers import block, ff, out
 
 class megnet(torch.nn.Module):
     def __init__(self, n1, n2, n3, nblocks, final_dim, bs, device):

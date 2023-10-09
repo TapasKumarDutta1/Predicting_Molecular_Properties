@@ -19,7 +19,8 @@ The scalar coupling constant (J) in organic chemistry measures nuclear spin inte
 - **EDGE**: The bonds of a molecule are represented as the edge incorporating information such as the type of bond and the distance between 2 atoms of the bond
 - **Global**: A blank tensor is used for global representation of a molecule to facilitate information propagation between faraway atoms
 
-- 
 ## Model Prediction
 
 ![Correlation Heatmap](images/model_prediction.jpg)
+
+As depicted in the figure to predict the scalar coupling constant between 2 atoms of a molecule the features of the 2 atoms are concatenated along with the spatial features between the 2 atoms which is then fed to a mlp for prediction.

@@ -24,3 +24,16 @@ The scalar coupling constant (J) in organic chemistry measures nuclear spin inte
 ![Correlation Heatmap](images/model_prediction.jpg)
 
 As depicted in the figure to predict the scalar coupling constant between 2 atoms of a molecule the features of the 2 atoms are concatenated along with the spatial features between the 2 atoms which is then fed to a mlp for prediction.
+
+## References
+```markdown
+@article{chen2019graph,
+  title={Graph networks as a universal machine learning framework for molecules and crystals},
+  author={Chen, Chi and Ye, Weike and Zuo, Yunxing and Zheng, Chen and Ong, Shyue Ping},
+  journal={Chemistry of Materials},
+  volume={31},
+  number={9},
+  pages={3564--3572},
+  year={2019},
+  publisher={ACS Publications}
+}

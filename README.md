@@ -13,7 +13,7 @@ The scalar coupling constant (J) in organic chemistry measures nuclear spin inte
 
 ## Features used for Graph Representation
 
-![Correlation Heatmap](images/Graph_Representation.jpg)
+![Correlation Heatmap](images/Graph_Representation1.jpg)
 
 - **NODE**: The atoms of a molecule are represented as the node incorporating information such as the atomic number of the atom and the XYZ co-ordinate of the atom
 - **EDGE**: The bonds of a molecule are represented as the edge incorporating information such as the type of bond and the distance between 2 atoms of the bond

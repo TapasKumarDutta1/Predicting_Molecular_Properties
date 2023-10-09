@@ -36,14 +36,8 @@ class megnet(torch.nn.Module):
             for j in range(len(dims[0][i])):
                 self.blocks.append(block(self.ff_list, i, dims[0][i][j][1], dims[1][i][j][1], dims[2][i][j][1], bs, device))
             
-        self.output_scc = out(2 * final_dim, 1)
-        self.output_dp = out(final_dim, 1)
-        self.output_mst = out(2 * final_dim, 18)
-        self.output_mc = out(2 * final_dim, 2)
-        self.output_pe = out(final_dim, 1)
-        self.output_scc_sudo = out(2 * final_dim, 4)
-        
-    def forward(self, data, combinations):
+        self.output_scc = out((2 * final_dim)+4, 1)
+    def forward(self, data, combinations, edge_data):
         """
         Forward pass through the MegNet model.
 
@@ -81,14 +75,9 @@ class megnet(torch.nn.Module):
             node_ftr += node_ftr_1
             edge_ftr += edge_ftr_1
             gbl_ftr += gbl_ftr_1
-            
-        ftr = node_ftr[0, combinations, :]
+        ftr = node_ftr[0, combinations.int(), :]
         ftr = ftr.flatten(2)
+        ftr = torch.cat([ftr,edge_data],-1)
         return (
-            torch.squeeze(self.output_scc(ftr), -1),
-            self.output_dp(gbl_ftr),
-            self.output_mst(ftr),
-            self.output_mc(ftr),
-            self.output_pe(gbl_ftr),
-            self.output_scc_sudo(ftr)
+            torch.squeeze(self.output_scc(ftr), -1)
         )

@@ -45,6 +45,7 @@ class megnet(torch.nn.Module):
             data (dict): Dictionary containing input data including node features, edge features, global features,
                          atom4bond, and bond4atom.
             combinations (tensor): Tensor containing combinations.
+            edge_data (tensor): Features engineered as angle, distance, between atom, central atom and nearest atoms, etc.
 
         Returns:
             tuple: A tuple containing the model's outputs.
